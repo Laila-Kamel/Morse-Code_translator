@@ -30,15 +30,15 @@ const code = {
 const keyValuePairs = Object.entries(code);
 
 //function to translate a sentence from english text to morse
-export const TranslateFromEnglishToMorse = (text) => {
-    return text.split(" ").map((word)=>wordTranslateFromEnglishToMorse(word).map(obj=>obj[1]).join(" "))
+ const TranslateFromEnglishToMorse = (text) => {
+    return text.split(" ").map((word)=>wordTranslateFromEnglishToMorse(word)).join("   ")
 };
 
 //function to translate a wrod from english text to morse
 export const wordTranslateFromEnglishToMorse=(word)=>{
-   return word.split("").map((char) => {
-    return keyValuePairs.find((keyValuePair)=>char.toUpperCase() == keyValuePair[0])
-  });
+   return String(word.split("").map((char) => {
+    return keyValuePairs.find((keyValuePair)=>char.toUpperCase() == keyValuePair[0]).filter((item,index)=>(index==1)).join("")
+  })).replace(/[,]/g," ").toLocaleLowerCase();
 }
 
 export default TranslateFromEnglishToMorse;
