@@ -1,0 +1,44 @@
+body{
+    height:70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width:50%;
+    margin:auto;
+    border: 2px solid black;
+    // display:flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+}
+h1{
+text-align: center;
+    color:red;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+    label{
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px;
+    }
+}
+.btn{
+    text-align: center;
+    &__button{
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 10px;
+        &:hover{
+            color:grey;
+            background-color: white;
+            border-color: grey;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+body {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 50%;
+  margin: auto;
+  border: 2px solid black;
+}
+
+h1 {
+  text-align: center;
+  color: red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+}
+.container label {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.btn {
+  text-align: center;
+}
+.btn__button {
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.btn__button:hover {
+  color: grey;
+  background-color: white;
+  border-color: grey;
+  cursor: pointer;
+}
