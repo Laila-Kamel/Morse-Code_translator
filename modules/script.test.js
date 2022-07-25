@@ -49,6 +49,7 @@ describe("test cases for a function that converts a sentence from morse code to 
       expect(TranslateFromEnglishToMorse("hello")).toBe(".... . .-.. .-.. ---"
       );
       expect(TranslateFromEnglishToMorse("Hi TheRe")).toBe(".... ..   - .... . .-. .");
+      // expect(()=>TranslateFromEnglishToMorse("Hi TheRe")).toBe(".... ..   - .... . .-. .");
     });
   });
   
@@ -72,9 +73,9 @@ describe("test cases for a function that converts a sentence plain in english te
       expect(TranslateFromMorseToEnglish(".... . .-.. .-.. ---")).toBe(
         "hello"
       );
-    //   it("should throw an error if a word in the Morse sentence includes a letter that doesn't have an english correspondent", () => {
-    //     expect(()=>TranslateFromMorseToEnglish(".... ----------")).toThrowError(invalidMorseCharacterErrorType);
-       
-    //   });
+    });
+    it("should throw an error if a word in the Morse sentence includes a letter that doesn't have an english correspondent", () => {
+      expect(()=>{TranslateFromMorseToEnglish(".... ----------")}).toThrowError(invalidMorseCharacterErrorType);
+     
     });
   });

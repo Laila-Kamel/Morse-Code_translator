@@ -36,14 +36,6 @@ const code = {
   Y: "-.--",
   Z: "--..",
 };
-// //function to check all characters are either . , - or spaces
-// export const isMorse = (morse) =>
-//   morse.split("").every((char) => char == "." || char == "-" || char == " ");
-
-//   //function to check all characters are letters from a to z
-//   export const isText = (text)=>
-//   text.split("")
-//   .every((char) => (char.toLowerCase() >= "a" && char <= "z") || char == " ");
 
 translateBtn.addEventListener("click", () => {
 //translate from morse to text
@@ -51,20 +43,20 @@ translateBtn.addEventListener("click", () => {
     //try to decode
     // try {
       //check if the morse values consists of . , - and spaces
-      if (isMorse(morse.value)) {
-        text.value = TranslateFromMorseToEnglish(morse.value);
-        console.log(text.value);
-      } 
+      try{
+        if (isMorse(morse.value)) {
+          text.value = TranslateFromMorseToEnglish(morse.value);
+          console.log(text.value);
+        }
+       
       //if the morse values are not . , - or spaces
       else text.value = "Please enter valid Morse Code characters(. or -)";
-    // } 
-    //of the morse values are . , - and spaces but don't exist in the code.
-    //cannot decode the morse values
-    // catch {
-    //   text.value = "Cannot decode this characters";
-    //   throw new Error("Invalid Morse Character")
-    // }
-  } 
+    } 
+    catch(e){
+      text.value =e.message;
+    }
+  }
+
   //translate from text to morse
   else if (text.value != "" && morse.value == "") {
     //check if values in the text are letters
